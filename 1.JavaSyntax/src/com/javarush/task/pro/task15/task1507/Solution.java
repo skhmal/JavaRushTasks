@@ -21,8 +21,8 @@ public class Solution {
                  ) {
                 if (count%2==0){
                     System.out.println(string);
-                    count++;
                 }
+                count= count + 1;
             }
         }catch (Exception e){
             e.printStackTrace();
