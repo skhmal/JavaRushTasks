@@ -18,13 +18,10 @@ public class Solution {
         printSomething(scanner.nextLine());
         String result = outputStream.toString();
         //напишите тут ваш код
-
-        String res = "";
-        for (int i = result.length()-1; i >= 0; i--) {
-            char ch = result.charAt(i);
-            res = res + String.valueOf(ch);
-        }
-        System.out.println(res);
+        StringBuilder sb = new StringBuilder(result);
+        outputStream.reset();
+        stream.print(sb.reverse());
+        System.out.println(outputStream.toString());
     }
 
     public static void printSomething(String str) {
