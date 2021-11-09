@@ -18,17 +18,18 @@ public class Iphone {
     }
 
     @Override
-    public boolean equals(Object object){
-        if((object == null) || (!(object instanceof Iphone)) || (object == this))  return false;
-
-        Iphone iphone = (Iphone) object;
-        return (price == iphone.price) && (model.equals(iphone.model)) && (color.equals(iphone.color));
-//        if ((this.model.equals(iphone.model)) && (this.color.equals(iphone.color))
-//                && (this.price == iphone.price)) {return true;}
-//        else {return false;}
-     }
-
-    //напишите тут ваш код
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Iphone iphone = (Iphone) o;
+        return price == iphone.price &&
+                Objects.equals(model, iphone.model) &&
+                Objects.equals(color, iphone.color);
+    }
 
     public static void main(String[] args) {
         Iphone iphone1 = new Iphone("X", "Black", 999);
