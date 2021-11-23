@@ -21,6 +21,7 @@ public class Solution {
             while (fileInputStream.available() > 0){
                 valueArray[fileInputStream.read()] += 1;
             }
+
             for (Integer value:valueArray
                  ) {
                 if (minValue > value && value > 0){
@@ -28,6 +29,7 @@ public class Solution {
 
                 }
             }
+
             for (int i = 0; i < valueArray.length; i++) {
                 if (valueArray[i] == minValue && valueArray[i] > 0){
                     resultList.add(i);
@@ -38,8 +40,6 @@ public class Solution {
                  ) {
                 System.out.print(it + " ");
             }
-
-
         }
     }
 }
