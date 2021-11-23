@@ -45,13 +45,23 @@ public class Beach implements Comparable<Beach>{
 
     @Override
     public synchronized int compareTo(Beach o) {
-        if (this.distance < o.distance && this.quality > o.quality){
-            return 1;
-        }else if (this.distance > o.distance && this.quality < o.quality){
-            return -1;
-        }else{
-            return 0;
+        int i, j = 0;
+
+        if (this.distance < o.distance){
+            j = j + 1;
+        }else if (this.distance > o.distance){
+            j = j - 1;
+        }else {
+            j = j + 0;
         }
 
+        if (this.quality > o.quality){
+            j = j +1;
+        }else if ( this.quality < o.quality){
+            j = j - 1;
+        }else {
+            j = j +0;
+        }
+            return j;
     }
 }
