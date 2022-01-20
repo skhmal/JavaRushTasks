@@ -17,8 +17,20 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        URL path = new URL(bufferedReader.readLine());
+        Path path = Paths.get(bufferedReader.readLine());
+        SearchFileVisitor searchFileVisitor = new SearchFileVisitor();
 
+        if (!Files.isDirectory(path)){
+            System.out.println(path + " - не папка");
+            return;
+        }
+
+        Files.walkFileTree(path, searchFileVisitor);
+        System.out.println("Всего папок - " + (searchFileVisitor.getDirectoryCounter()-1));
+        System.out.println("Всего файлов - "  + searchFileVisitor.getFileCounter());
+        System.out.println("Общий размер - " + searchFileVisitor.getSizeOfDirectory());
 
     }
+
+
 }
