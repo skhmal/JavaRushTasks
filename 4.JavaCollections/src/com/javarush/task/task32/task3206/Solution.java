@@ -31,7 +31,7 @@ public class Solution {
     public <T extends Item>T getProxy(Class<T> item, Class<?>... interfaces){
         Class<?>[] interf = new Class<?>[interfaces.length+1];
         interf[0] = item;
-        System.arraycopy();
+       // System.arraycopy();
         return null;
     }
 }

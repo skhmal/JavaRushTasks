@@ -21,6 +21,12 @@ public class Solution {
         @Override
         public void run() {
             //напишите тут ваш код
+            try {
+                DoubleString service = (DoubleString) registry.lookup(UNIC_BINDING_NAME);
+                System.out.println(service.doubleString("AVB"));
+            } catch (RemoteException | NotBoundException e) {
+                e.printStackTrace();
+            }
 
         }
     });
